@@ -22,7 +22,8 @@ public class UserRestController {
         ResponseEntity entity = null;
 
         List<User> user = userService.selectUserList();
-
+        //commit후 잔디가 안심어지는 오류가 있어서 수정 확인
+        
         entity = new ResponseEntity<>(user,HttpStatus.OK);
 
         System.out.println(entity);
