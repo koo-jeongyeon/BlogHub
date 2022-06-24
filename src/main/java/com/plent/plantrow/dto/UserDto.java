@@ -1,7 +1,5 @@
 package com.plent.plantrow.dto;
 
-import javax.persistence.Id;
-
 import com.plent.plantrow.entity.User;
 
 import lombok.AllArgsConstructor;
