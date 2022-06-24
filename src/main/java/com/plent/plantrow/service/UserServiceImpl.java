@@ -24,5 +24,29 @@ public class UserServiceImpl implements UserService{
         
         return userMapper.selectUserList(userDto);
     }
+
+    @Override
+    public Integer addUserObject(UserDto userDto) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Integer editUserObject(UserDto userDto) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public User getUserObject(UserDto userDto) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Integer deleteUserObject(UserDto userDto) {
+        // TODO Auto-generated method stub
+        return null;
+    }
     
 }
