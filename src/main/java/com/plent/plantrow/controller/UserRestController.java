@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,6 +32,25 @@ public class UserRestController {
         entity = new ResponseEntity<>(user,HttpStatus.OK);
 
         System.out.println(entity);
+        return entity;
+    }
+
+    /*
+     * 2022-06-26
+     * 로그인
+     * koojeongyeon
+     */
+    @PostMapping("/login")
+    public ResponseEntity loginCheck(){
+        ResponseEntity entity = null; 
+
+        List<User> user = userService.selectUserList();
+
+        User userOne = user.get(0);
+
+        entity = new ResponseEntity<>(userOne,HttpStatus.OK);
+
+        System.out.println("login:" + entity);
         return entity;
     }
 
