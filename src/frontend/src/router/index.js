@@ -1,28 +1,38 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../components/HomeView.vue'
 import LoginView from '../components/LoginView.vue'
+import JoinView from '../components/JoinView.vue'
+import FlantListView from '../components/FlantListView.vue'
+import FlantFormView from '../components/FlantFormView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/Query',
+    path: '/',
     name: 'home',
     component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/Join',
+    name: 'Join',
+    component: JoinView
+  },
+  {
+    path: '/FlantList',
+    name: 'FlantList',
+    component: FlantListView
+  },
+  {
+    path: '/FlantFormView',
+    name: 'FlantFormView',
+    component: FlantFormView
   }
 ]
 

@@ -27,14 +27,15 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <div v-if="nickname === '테스트'">
+      <router-link :to="`/login`">
+        <span class="mr-2 logintext">로그인</span>
+        </router-link>
+      </div>
+      <div v-else>
+         <span class="mr-2 logintext">{{$route.params.nickname}}님 환영합니다</span>
+      </div>
+        
     </v-app-bar>
 
     <v-main>
@@ -49,7 +50,26 @@ export default {
   name: 'App',
 
   data: () => ({
+
+    nickname: this.$route.params.nickname
+
     //
   }),
+
+     methods: {
+      
+
+        mounted() { //왜 dom구문에선 받아와 지고 스크립트에선 안되는거지? 알아야함,, 그리고 app.vue가 최상위라 home한테 넘긴 파라미터라도 같이 받는건가? 확인필요
+        console.log("??" + this.$route.params.nickname);
+        }
+     }
 };
 </script>
+
+<style>
+
+.logintext{
+  color: white;
+}
+
+</style>

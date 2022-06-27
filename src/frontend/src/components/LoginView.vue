@@ -21,6 +21,14 @@
                     @click="loginBtn()"
                     >로그인</v-btn>
 
+                    <router-link :to="`/join`">
+                         <v-btn
+                        elevation="2"
+                        >회원가입</v-btn>
+                    </router-link>
+
+
+
             </div>
             </v-col>
         </v-row>
@@ -56,13 +64,13 @@ export default {
         },
       
         async loginBtn () { 
-
+ 
             try {
                 const getUserInfoPromise = await this.getUserInfo()
                 
                 this.$router.push({
-                    name: "about",
-                    query: {nickname: getUserInfoPromise.data.nickname}
+                    name: "home",
+                    params: {nickname: getUserInfoPromise.data.nickname}
                 })
 
             } catch (error) {
@@ -70,36 +78,8 @@ export default {
             }
         },
 
-        // loginBtn() {
-
-        //      console.log("비동기 처리 1");
-
-        //     axios({
-        //         method: 'post',
-        //         url: '/api/login'
-        //     })
-        //     .then(function (res) {
-        //         console.log(res.data);
-        //         console.log(res.status);
-        //         console.log(res.headers);
-                
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     })
-
-        //     console.log("비동기 처리 2");
-            
-        // }
-
     },
     
-    // mounted() { //일반적으로 가장 많이 사용, 실제 dom에 부착되고 난 이후에 실행되므로 모든 요소에 접근이 가능함
-
-    // },
-
-
-
 }
 </script>
 
