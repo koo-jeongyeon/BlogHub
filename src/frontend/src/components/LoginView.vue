@@ -56,7 +56,7 @@ export default {
 
         getUserInfo() {
             return this.$axios.post('/api/login',{
-                parame: {
+                params: {
                     id: this.id,
                     password: this.password
                 }

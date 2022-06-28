@@ -75,7 +75,8 @@
             cols="12"
           >
             <v-btn
-                 elevation="2"
+            elevation="2"
+            @click="JoinBtn()"
             >회원가입</v-btn>
             <router-link :to="`/login`">
                  <v-btn
@@ -116,6 +117,39 @@ export default {
         passwordRules: [],
         phoneRules: []
     }),
+
+    methods: {
+
+        addUserInfo() {
+                console.log("name" + this.name);
+                return this.$axios({
+                    method: 'post',
+                    url: '/api/join',
+                    data: {
+                        nickname: this.nickname,
+                        name: this.name,
+                        password: this.password,
+                        email: this.email,
+                        phone: this.phone
+                    }
+                })
+        },
+
+        async JoinBtn() {
+
+            try {
+                await this.addUserInfo();
+
+                this.$router.push({
+                    name: "login"
+                })
+            } catch (error) {
+                console.log(error);
+            }
+
+        }
+
+    }
 }
 </script>
 

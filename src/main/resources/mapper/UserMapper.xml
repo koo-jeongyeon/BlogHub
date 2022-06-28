@@ -20,4 +20,20 @@
             WHERE id = #{id}
     </select>
 
+    <insert id="addUserObject">
+
+            INSERT INTO USER
+            (nickname
+            , name
+            , password
+            , email
+            , phone)
+            VALUES(#{nickname}
+            , #{name}
+            , #{password}
+            , #{email}
+            , #{phone});
+
+    </insert>
+
 </mapper>

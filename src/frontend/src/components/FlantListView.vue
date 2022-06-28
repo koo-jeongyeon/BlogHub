@@ -13,13 +13,13 @@
                  elevation="2"
             >달력</v-btn>
             
-            <router-link :to="`/FlantForm`">
+            <router-link :to="`/flantform`">
             <v-btn
                  elevation="2"
             >식물 등록하기
             </v-btn>
             </router-link>
-            
+
             </v-col>
 
 

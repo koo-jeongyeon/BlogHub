@@ -20,18 +20,18 @@ const routes = [
     component: LoginView
   },
   {
-    path: '/Join',
-    name: 'Join',
+    path: '/join',
+    name: 'join',
     component: JoinView
   },
   {
-    path: '/FlantList',
-    name: 'FlantList',
+    path: '/flantlist',
+    name: 'flantlist',
     component: FlantListView
   },
   {
-    path: '/FlantFormView',
-    name: 'FlantFormView',
+    path: '/flantformview',
+    name: 'flantformview',
     component: FlantFormView
   }
 ]

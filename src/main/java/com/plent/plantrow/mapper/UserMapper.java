@@ -13,4 +13,6 @@ public interface UserMapper {
 
     public List<User> selectUserList(UserDto userDto);
 
+    public Integer addUserObject(User user);
+
 }

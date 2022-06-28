@@ -6,9 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Getter
 @Builder
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDto {
@@ -24,6 +26,14 @@ public class UserDto {
     private String email;
 
     private String phone;
+
+    public UserDto(User entity){
+        this.id = entity.getId();
+        this.nickname = entity.getName();
+        this.password = entity.getPassword();
+        this.email = entity.getEmail();
+        this.phone = entity.getPhone();
+    }
 
     public User toEntity(){
         return User.builder()

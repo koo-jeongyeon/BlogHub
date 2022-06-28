@@ -25,7 +25,7 @@
                  elevation="2"
             >등록</v-btn>
             
-        <router-link :to="`/FlantList`">
+        <router-link :to="`/flantlist`">
             <v-btn 
                  elevation="2"
             >내 식물 리스트 가기

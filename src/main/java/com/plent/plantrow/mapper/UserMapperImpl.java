@@ -25,5 +25,10 @@ public class UserMapperImpl implements UserMapper{
         return sqlSession.selectList("UserMapper.selectUserList", userDto);
     
     }
+
+    @Override
+    public Integer addUserObject(User user) {
+        return sqlSession.insert("UserMapper.addUserObject", user);
+    }
     
 }
