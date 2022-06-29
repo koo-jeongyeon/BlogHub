@@ -12,7 +12,7 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-         {{$route.params.nickname}} Welcome to Vuetify
+         {{this.$store.state.name}} Welcome to Vuetify
         </h1>
 
        

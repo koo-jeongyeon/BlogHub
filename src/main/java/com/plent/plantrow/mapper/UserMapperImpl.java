@@ -27,8 +27,15 @@ public class UserMapperImpl implements UserMapper{
     }
 
     @Override
-    public Integer addUserObject(User user) {
-        return sqlSession.insert("UserMapper.addUserObject", user);
+    public Integer addUserObject(User entity) {
+
+        return sqlSession.insert("UserMapper.addUserObject", entity);
+    }
+
+    @Override
+    public User getUserObject(User entity) {
+
+        return sqlSession.selectOne("UserMapper.getUserObject", entity);
     }
     
 }

@@ -29,27 +29,25 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Integer addUserObject(UserDto userDto) {
-        
-        User user = userDto.toEntity();
+    public Integer addUserObject(UserDto dto) {
 
-        return userMapper.addUserObject(user);
+        return userMapper.addUserObject(dto.toEntity());
     }
 
     @Override
-    public Integer editUserObject(UserDto userDto) {
+    public Integer editUserObject(UserDto dto) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public User getUserObject(UserDto userDto) {
-        // TODO Auto-generated method stub
-        return null;
+    public User getUserObject(UserDto dto) {
+
+        return userMapper.getUserObject(dto.toEntity());
     }
 
     @Override
-    public Integer deleteUserObject(UserDto userDto) {
+    public Integer deleteUserObject(UserDto dto) {
         // TODO Auto-generated method stub
         return null;
     }

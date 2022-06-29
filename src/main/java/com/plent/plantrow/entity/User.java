@@ -25,7 +25,7 @@ public class User {
     private int id;
     
     @Column
-    private String nickname;
+    private String homeid;
 
     @Column
     private String name;

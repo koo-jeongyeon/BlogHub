@@ -45,14 +45,11 @@ public class UserRestController {
      * koojeongyeon
      */
     @PostMapping("/login")
-    public ResponseEntity loginCheck(){
+    public ResponseEntity loginCheck(@RequestBody UserDto dto){
         ResponseEntity entity = null; 
-
-        List<User> user = userService.selectUserList();
-
-        User userOne = user.get(0);
-
-        entity = new ResponseEntity<>(userOne,HttpStatus.OK);
+        System.out.println(dto.toString());
+        User user = userService.getUserObject(dto);
+        entity = new ResponseEntity<>(user,HttpStatus.OK);
 
         System.out.println("login:" + entity);
         return entity;
@@ -63,17 +60,12 @@ public class UserRestController {
      * koojeongyeon
      */
     @PostMapping("/join")
-    public ResponseEntity join(@RequestBody UserDto userDto){
+    public ResponseEntity join(@RequestBody UserDto dto){
         ResponseEntity entity = null; 
 
-        System.out.println("userDto:" + userDto.toString());
-
-        Integer result = userService.addUserObject(userDto);
-
+        Integer result = userService.addUserObject(dto);
 
         entity = new ResponseEntity<>(result,HttpStatus.OK);
-
-        System.out.println("login:" + entity);
         return entity;
     }
 

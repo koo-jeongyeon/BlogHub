@@ -22,10 +22,10 @@
             md="4"
           >
             <v-text-field
-              v-model="nickname"
+              v-model="homeid"
               :rules="nameRules"
               :counter="10"
-              label="닉네임"
+              label="id"
               required
             ></v-text-field>
           </v-col>
@@ -101,7 +101,7 @@ export default {
     data: () => ({
         valid: false,
         name: '',
-        nickname: '',
+        homeid: '',
         password: '',
         email: '',
         phone: '',
@@ -126,7 +126,7 @@ export default {
                     method: 'post',
                     url: '/api/join',
                     data: {
-                        nickname: this.nickname,
+                        homeid: this.homeid,
                         name: this.name,
                         password: this.password,
                         email: this.email,

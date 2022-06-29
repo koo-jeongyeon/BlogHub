@@ -3,7 +3,7 @@
 <mapper namespace="UserMapper">
 
     <resultMap id="user" type="com.plent.plantrow.entity.User">
-        <result property="id" column="id"/>
+        <result property="homeid" column="homeid"/>
         <result property="nickname" column="nickname"/>
         <result property="name" column="name"/>
         <result property="password" column="password"/>
@@ -20,15 +20,25 @@
             WHERE id = #{id}
     </select>
 
+    <select id="getUserObject"
+            parameterType="java.util.Map"
+            resultMap="user">
+    
+            SELECT * 
+            FROM USER
+            WHERE homeid = #{homeid}
+            AND password = #{password}
+    </select>
+
     <insert id="addUserObject">
 
             INSERT INTO USER
-            (nickname
+            (homeid
             , name
             , password
             , email
             , phone)
-            VALUES(#{nickname}
+            VALUES(#{homeid}
             , #{name}
             , #{password}
             , #{email}

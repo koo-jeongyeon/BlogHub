@@ -9,7 +9,7 @@
                         label="Main input"
                         :rules="rules"
                         hide-details="auto"
-                        v-model="id"
+                        v-model="homeid"
                     ></v-text-field>
                     <v-text-field 
                         label="Another input"
@@ -46,7 +46,7 @@ export default {
         value => (value && value.length >= 3) || 'Min 3 characters',
         ],
         
-        id: "",
+        homeid: "",
         password: "",
     }),
 
@@ -55,12 +55,14 @@ export default {
     methods: {
 
         getUserInfo() {
-            return this.$axios.post('/api/login',{
-                params: {
-                    id: this.id,
-                    password: this.password
-                }
-            })
+            return this.$axios({
+                    method: 'post',
+                    url: '/api/login',
+                    data: {
+                        homeid: this.homeid,
+                        password: this.password
+                    }
+                })
         },
       
         async loginBtn () { 
@@ -70,8 +72,12 @@ export default {
                 
                 this.$router.push({
                     name: "home",
-                    params: {nickname: getUserInfoPromise.data.nickname}
+                    params: {homeid: getUserInfoPromise.data.homeid}
                 })
+
+                console.log("dd :" + getUserInfoPromise);
+
+                this.$store.commit("SET_NAME",getUserInfoPromise.data.name)
 
             } catch (error) {
                 console.log(error);

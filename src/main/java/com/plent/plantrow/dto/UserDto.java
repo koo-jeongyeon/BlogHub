@@ -17,7 +17,7 @@ public class UserDto {
 
     private int id;
     
-    private String nickname;
+    private String homeid;
 
     private String name;
 
@@ -29,7 +29,8 @@ public class UserDto {
 
     public UserDto(User entity){
         this.id = entity.getId();
-        this.nickname = entity.getName();
+        this.homeid = entity.getHomeid();
+        this.name = entity.getName();
         this.password = entity.getPassword();
         this.email = entity.getEmail();
         this.phone = entity.getPhone();
@@ -38,7 +39,7 @@ public class UserDto {
     public User toEntity(){
         return User.builder()
         .id(id)
-        .nickname(nickname)
+        .homeid(homeid)
         .name(name)
         .password(password)
         .email(email)
