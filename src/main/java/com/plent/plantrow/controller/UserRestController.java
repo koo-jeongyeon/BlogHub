@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,52 +19,25 @@ import lombok.RequiredArgsConstructor;;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 public class UserRestController {
     
     //@Autowired
     private final UserService userService;
 
-    /*
-     * 테스트용
-     */
-    @GetMapping("/test")
-    public ResponseEntity testCheck(){
-        ResponseEntity entity = null;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-        List<User> user = userService.selectUserList();
-
-        entity = new ResponseEntity<>(user,HttpStatus.OK);
-
-        System.out.println(entity);
-        return entity;
-    }
-
-    /*
-     * 2022-06-26
-     * 로그인
-     * koojeongyeon
-     */
-    @PostMapping("/login")
-    public ResponseEntity loginCheck(@RequestBody UserDto dto){
-        ResponseEntity entity = null; 
-        System.out.println(dto.toString());
-        User user = userService.getUserObject(dto);
-        entity = new ResponseEntity<>(user,HttpStatus.OK);
-
-        System.out.println("login:" + entity);
-        return entity;
-    }
     /*
      * 2022-06-28
      * 회원가입
      * koojeongyeon
      */
     @PostMapping("/join")
-    public ResponseEntity join(@RequestBody UserDto dto){
-        ResponseEntity entity = null; 
+    public ResponseEntity join(@RequestBody UserDto user){
+        ResponseEntity entity = null;
 
-        Integer result = userService.addUserObject(dto);
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        Integer result = userService.addUserObject(user);
 
         entity = new ResponseEntity<>(result,HttpStatus.OK);
         return entity;

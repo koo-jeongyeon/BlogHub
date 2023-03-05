@@ -11,10 +11,8 @@ import com.plent.plantrow.entity.User;
 @Component
 public interface UserMapper {
 
-    public List<User> selectUserList(UserDto dto);
+    public Integer addUserObject(UserDto dto);
 
-    public Integer addUserObject(User entity);
-
-    public User getUserObject(User entity);
+    public User findByUsername(String username);
 
 }

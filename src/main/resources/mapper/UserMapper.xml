@@ -11,38 +11,30 @@
         <result property="phone" column="phone"/>
     </resultMap>
 
-    <select id="selectUserList" 
-            parameterType="java.util.Map"
+    <select id="findByUsername"
+            parameterType="String"
             resultMap="user">
 
-            SELECT * 
-            FROM USER
-            WHERE id = #{id}
-    </select>
-
-    <select id="getUserObject"
-            parameterType="java.util.Map"
-            resultMap="user">
-    
-            SELECT * 
-            FROM USER
-            WHERE homeid = #{homeid}
-            AND password = #{password}
+        SELECT *
+        FROM USER
+        WHERE username = #{username}
     </select>
 
     <insert id="addUserObject">
 
             INSERT INTO USER
-            (homeid
+            (username
             , name
             , password
             , email
-            , phone)
-            VALUES(#{homeid}
+            , phone
+            , roles)
+            VALUES(#{username}
             , #{name}
             , #{password}
             , #{email}
-            , #{phone});
+            , #{phone}
+            , #{roles});
 
     </insert>
 

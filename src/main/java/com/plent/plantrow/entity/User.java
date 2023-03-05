@@ -12,6 +12,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Getter
 @Entity
 @Builder
@@ -25,7 +29,7 @@ public class User{
     private int id;
     
     @Column
-    private String homeid;
+    private String username;
 
     @Column
     private String name;
@@ -38,4 +42,15 @@ public class User{
 
     @Column
     private String phone;
+
+    @Column
+    private String roles;
+
+    // ENUM으로 안하고 ,로 해서 구분해서 ROLE을 입력 -> 그걸 파싱!!
+    public List<String> getRoleList() {
+        if (this.roles.length() > 0) {
+            return Arrays.asList(this.roles.split(","));
+        }
+        return new ArrayList<>();
+    }
 }

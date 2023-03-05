@@ -2,7 +2,6 @@ package com.plent.plantrow.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -20,22 +19,14 @@ public class UserMapperImpl implements UserMapper{
     }
 
     @Override
-    public List<User> selectUserList(UserDto userDto) {
+    public Integer addUserObject(UserDto dto) {
 
-        return sqlSession.selectList("UserMapper.selectUserList", userDto);
-    
+        return sqlSession.insert("UserMapper.addUserObject", dto);
     }
-
     @Override
-    public Integer addUserObject(User entity) {
+    public User findByUsername(String username) {
 
-        return sqlSession.insert("UserMapper.addUserObject", entity);
+        return sqlSession.selectOne("UserMapper.findByUsername", username);
     }
 
-    @Override
-    public User getUserObject(User entity) {
-
-        return sqlSession.selectOne("UserMapper.getUserObject", entity);
-    }
-    
 }
