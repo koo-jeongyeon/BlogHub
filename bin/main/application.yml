@@ -1,10 +1,10 @@
 server:
-    port: 8080
+    port: 8081
     
 spring:
     datasource:
         hikari:
             driver-class-name: com.mysql.cj.jdbc.Driver
             jdbc-url: jdbc:mysql://localhost:3306/flantrow?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-            username: root
-            password: yeoni8749!
+            username: flant
+            password: Yeoni8749!

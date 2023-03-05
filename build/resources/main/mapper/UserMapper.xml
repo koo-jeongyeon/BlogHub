@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+
+    <resultMap id="user" type="com.plent.plantrow.entity.User">
+        <result property="homeid" column="homeid"/>
+        <result property="nickname" column="nickname"/>
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
+    </resultMap>
+
+    <select id="selectUserList" 
+            parameterType="java.util.Map"
+            resultMap="user">
+
+            SELECT * 
+            FROM USER
+            WHERE id = #{id}
+    </select>
+
+    <select id="getUserObject"
+            parameterType="java.util.Map"
+            resultMap="user">
+    
+            SELECT * 
+            FROM USER
+            WHERE homeid = #{homeid}
+            AND password = #{password}
+    </select>
+
+    <insert id="addUserObject">
+
+            INSERT INTO USER
+            (homeid
+            , name
+            , password
+            , email
+            , phone)
+            VALUES(#{homeid}
+            , #{name}
+            , #{password}
+            , #{email}
+            , #{phone});
+
+    </insert>
+
+</mapper>
