@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.plent.plantrow.config.JwtProperties;
 import com.plent.plantrow.config.auth.PrincipalDetails;
-import com.plent.plantrow.dto.LoginRequestDto;
+import com.plent.plantrow.domain.model.LoginRequestDto;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

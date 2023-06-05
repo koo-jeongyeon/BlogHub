@@ -1,4 +1,4 @@
-package com.plent.plantrow.dto;
+package com.plent.plantrow.domain.model;
 
 import lombok.Data;
 

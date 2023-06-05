@@ -2,10 +2,10 @@ package com.plent.plantrow.service;
 
 import java.util.List;
 
+import com.plent.plantrow.domain.entity.User;
 import org.springframework.stereotype.Component;
 
-import com.plent.plantrow.dto.UserDto;
-import com.plent.plantrow.entity.User;
+import com.plent.plantrow.domain.model.*;
 
 @Component
 public interface UserService {
@@ -14,6 +14,11 @@ public interface UserService {
      * koojeongyeon
      * 회원가입
      */
-    public Integer addUserObject(UserDto dto);
+    public User addUserObject(UserRegistryDto dto);
+
+    public List<User> getUserList();
+
+    public User findByUsername(String username);
+
 
 }

@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import com.plent.plantrow.entity.User;
+import com.plent.plantrow.domain.entity.User;
 
 public class PrincipalDetails implements UserDetails {
     private User user;
@@ -52,11 +52,11 @@ public class PrincipalDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        user.getRoleList().forEach(r -> {
-            authorities.add(() -> {
-                return r;
-            });
-        });
+//        user.getRoleList().forEach(r -> {
+//            authorities.add(() -> {
+//                return r;
+//            });
+//        });
         return authorities;
     }
 }

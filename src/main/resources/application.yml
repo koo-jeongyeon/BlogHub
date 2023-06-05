@@ -1,10 +1,28 @@
 server:
     port: 8080
-    
 spring:
     datasource:
-        hikari:
-            driver-class-name: com.mysql.cj.jdbc.Driver
-            jdbc-url: jdbc:mysql://localhost:3306/flantrow?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-            username: root
-            password: yeoni8749!
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/flantrow?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+        username: root
+        password: yeoni8749!
+    jpa:
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQL8Dialect
+        show-sql: true
+        defer-datasource-initialization: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                show_sql: true
+                format_sql: true
+                use_sql_comments: true
+# 로깅 레벨
+logging:
+    level:
+        org:
+            hibernate:
+                type:
+                    descriptor:
+                        sql: trace
