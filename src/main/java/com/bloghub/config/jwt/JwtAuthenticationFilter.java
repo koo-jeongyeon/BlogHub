@@ -1,4 +1,4 @@
-package com.plent.plantrow.config.jwt;
+package com.bloghub.config.jwt;
 
 
 import java.io.IOException;
@@ -9,9 +9,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.plent.plantrow.config.JwtProperties;
-import com.plent.plantrow.config.auth.PrincipalDetails;
-import com.plent.plantrow.domain.model.LoginRequestDto;
+import com.bloghub.config.JwtProperties;
+import com.bloghub.domain.model.LoginRequestDto;
+import com.bloghub.config.auth.PrincipalDetails;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

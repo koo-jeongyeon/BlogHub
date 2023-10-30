@@ -1,6 +1,6 @@
-package com.plent.plantrow.domain.model;
+package com.bloghub.domain.model;
 
-import com.plent.plantrow.domain.entity.User;
+import com.bloghub.domain.entity.User;
 import lombok.*;
 import org.springframework.beans.BeanUtils;
 

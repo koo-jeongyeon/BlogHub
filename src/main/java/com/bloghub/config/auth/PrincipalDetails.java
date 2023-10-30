@@ -1,12 +1,11 @@
-package com.plent.plantrow.config.auth;
+package com.bloghub.config.auth;
 
+import com.bloghub.domain.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
-import com.plent.plantrow.domain.entity.User;
 
 public class PrincipalDetails implements UserDetails {
     private User user;

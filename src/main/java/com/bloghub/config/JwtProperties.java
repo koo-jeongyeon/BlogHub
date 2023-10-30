@@ -1,4 +1,4 @@
-package com.plent.plantrow.config;
+package com.bloghub.config;
 
 public interface JwtProperties {
     String SECRET = "cos"; // 우리 서버만 알고 있는 비밀값

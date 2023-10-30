@@ -1,4 +1,4 @@
-package com.plent.plantrow;
+package com.bloghub;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

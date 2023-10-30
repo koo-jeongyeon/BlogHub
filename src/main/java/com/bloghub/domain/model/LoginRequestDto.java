@@ -1,4 +1,4 @@
-package com.plent.plantrow.domain.model;
+package com.bloghub.domain.model;
 
 import lombok.Data;
 

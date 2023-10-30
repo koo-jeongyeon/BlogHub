@@ -1,4 +1,4 @@
-package com.plent.plantrow.config;
+package com.bloghub.config;
 
 import javax.sql.DataSource;
 

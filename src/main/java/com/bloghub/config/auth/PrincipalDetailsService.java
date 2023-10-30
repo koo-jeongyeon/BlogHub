@@ -1,13 +1,13 @@
-package com.plent.plantrow.config.auth;
+package com.bloghub.config.auth;
 
-import com.plent.plantrow.domain.repository.UserRepository;
+import com.bloghub.domain.entity.User;
+import com.bloghub.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.plent.plantrow.domain.entity.User;
 @Service
 @RequiredArgsConstructor
 public class PrincipalDetailsService implements UserDetailsService {

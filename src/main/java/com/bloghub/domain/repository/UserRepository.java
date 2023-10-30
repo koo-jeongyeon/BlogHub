@@ -1,7 +1,7 @@
-package com.plent.plantrow.domain.repository;
+package com.bloghub.domain.repository;
 
 
-import com.plent.plantrow.domain.entity.User;
+import com.bloghub.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

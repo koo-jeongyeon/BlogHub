@@ -1,4 +1,4 @@
-package com.plent.plantrow.domain.entity;
+package com.bloghub.domain.entity;
 
 import lombok.*;
 

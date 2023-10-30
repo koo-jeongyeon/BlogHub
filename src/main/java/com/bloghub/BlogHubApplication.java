@@ -1,4 +1,4 @@
-package com.plent.plantrow;
+package com.bloghub;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
-public class PlantrowApplication {
+public class BlogHubApplication {
 
 	@Bean
 	BCryptPasswordEncoder passwordEncoder() {
@@ -14,7 +14,7 @@ public class PlantrowApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(PlantrowApplication.class, args);
+		SpringApplication.run(BlogHubApplication.class, args);
 	}
 
 }

@@ -1,13 +1,13 @@
-package com.plent.plantrow.service;
+package com.bloghub.service;
 
 import java.util.List;
 
-import com.plent.plantrow.domain.entity.User;
-import com.plent.plantrow.domain.model.UserRegistryDto;
+import com.bloghub.domain.entity.User;
+import com.bloghub.domain.model.UserRegistryDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.plent.plantrow.domain.repository.UserRepository;
+import com.bloghub.domain.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 @Slf4j
@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
 
     @Override
-    public List<com.plent.plantrow.domain.entity.User> getUserList() {
+    public List<User> getUserList() {
         return userRepository.findAll();
     }
 

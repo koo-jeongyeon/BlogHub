@@ -1,4 +1,4 @@
-package com.plent.plantrow.config;
+package com.bloghub.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

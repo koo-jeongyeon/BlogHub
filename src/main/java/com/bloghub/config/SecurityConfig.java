@@ -1,6 +1,6 @@
-package com.plent.plantrow.config;
+package com.bloghub.config;
 
-import com.plent.plantrow.config.jwt.JwtAuthenticationFilter;
+import com.bloghub.config.jwt.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,22 +1,16 @@
-package com.plent.plantrow.controller;
+package com.bloghub.controller;
 
-import java.util.List;
-
-import com.plent.plantrow.domain.entity.User;
-import com.plent.plantrow.domain.model.UserRegistryDto;
+import com.bloghub.domain.entity.User;
+import com.bloghub.domain.model.UserRegistryDto;
+import com.bloghub.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.plent.plantrow.service.UserService;
 
 import lombok.RequiredArgsConstructor;;
 @Slf4j

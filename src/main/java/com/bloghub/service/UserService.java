@@ -1,11 +1,12 @@
-package com.plent.plantrow.service;
+package com.bloghub.service;
 
 import java.util.List;
 
-import com.plent.plantrow.domain.entity.User;
+import com.bloghub.domain.entity.User;
+import com.bloghub.domain.model.UserRegistryDto;
 import org.springframework.stereotype.Component;
 
-import com.plent.plantrow.domain.model.*;
+import com.bloghub.domain.model.*;
 
 @Component
 public interface UserService {
