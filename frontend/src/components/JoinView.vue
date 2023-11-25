@@ -22,7 +22,7 @@
             md="4"
           >
             <v-text-field
-              v-model="homeid"
+              v-model="username"
               :rules="nameRules"
               :counter="10"
               label="id"
@@ -50,8 +50,8 @@
             <v-text-field
               v-model="email"
               :rules="emailRules"
-              :counter="10"
-              label="이매알"
+              :counter="20"
+              label="이매"
               require
             ></v-text-field>
           </v-col>
@@ -63,7 +63,7 @@
             <v-text-field
               v-model="phone"
               :rules="phoneRules"
-              :counter="10"
+              :counter="15"
               label="폰번호"
               required
             ></v-text-field>
@@ -101,7 +101,7 @@ export default {
     data: () => ({
         valid: false,
         name: '',
-        homeid: '',
+        username: '',
         password: '',
         email: '',
         phone: '',
@@ -124,9 +124,9 @@ export default {
                 console.log("name" + this.name);
                 return this.$axios({
                     method: 'post',
-                    url: '/api/join',
+                    url: '/api/v1/join',
                     data: {
-                        homeid: this.homeid,
+                        username: this.username,
                         name: this.name,
                         password: this.password,
                         email: this.email,

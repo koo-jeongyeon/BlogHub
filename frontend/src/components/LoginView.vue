@@ -9,7 +9,7 @@
                         label="Main input"
                         :rules="rules"
                         hide-details="auto"
-                        v-model="homeid"
+                        v-model="username"
                     ></v-text-field>
                     <v-text-field 
                         label="Another input"
@@ -45,8 +45,8 @@ export default {
         value => !!value || 'Required.',
         value => (value && value.length >= 3) || 'Min 3 characters',
         ],
-        
-        homeid: "",
+
+        username: "",
         password: "",
     }),
 
@@ -59,7 +59,7 @@ export default {
                     method: 'post',
                     url: '/api/login',
                     data: {
-                        homeid: this.homeid,
+                        username: this.username,
                         password: this.password
                     }
                 })
@@ -72,7 +72,7 @@ export default {
                 
                 this.$router.push({
                     name: "home",
-                    params: {homeid: getUserInfoPromise.data.homeid}
+                    params: {username: getUserInfoPromise.data.username}
                 })
 
                 console.log("dd :" + getUserInfoPromise);

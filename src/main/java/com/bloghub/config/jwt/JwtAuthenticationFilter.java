@@ -24,17 +24,19 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter{
 
     private final AuthenticationManager authenticationManager;
 
     // Authentication 객체 만들어서 리턴 => 의존 : AuthenticationManager
     // 인증 요청시에 실행되는 함수 => /login
+    public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
+        setFilterProcessesUrl("/api/login");
+        this.authenticationManager = authenticationManager;
+    }
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
             throws AuthenticationException {
-
         System.out.println("JwtAuthenticationFilter : 진입");
 
         // request에 있는 username과 password를 파싱해서 자바 Object로 받기
