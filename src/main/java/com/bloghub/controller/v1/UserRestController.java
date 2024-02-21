@@ -1,4 +1,4 @@
-package com.bloghub.controller;
+package com.bloghub.controller.v1;
 
 import com.bloghub.domain.entity.User;
 import com.bloghub.domain.model.UserRegistryDto;

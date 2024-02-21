@@ -31,7 +31,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     // Authentication 객체 만들어서 리턴 => 의존 : AuthenticationManager
     // 인증 요청시에 실행되는 함수 => /login
     public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
-        setFilterProcessesUrl("/api/login");
+        setFilterProcessesUrl("/api/v1/login");
         this.authenticationManager = authenticationManager;
     }
     @Override
