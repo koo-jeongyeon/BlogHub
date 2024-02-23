@@ -130,3 +130,8 @@ gradle-app.setting
 *.lock
 *.bin
 *.probe
+.idea
+.DS_Store
+build
+.gradle
+bin
